@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Día de las Cartitas</title>
+    <style>
+        body {
+            background-color: #fff8f0;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 60px;
+        }
+        h1 {
+            color: #d45a49;
+            font-size: 3em;
+        }
+        p {
+            color: #444;
+            font-size: 1.3em;
+        }
+        #carta {
+            margin: 30px auto;
+            max-width: 700px;
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #d45a49;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6em;
+        }
+        button {
+            background-color: #d45a49;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #b94739;
+        }
+        #contador {
+            font-size: 1.2em;
+            color: #d45a49;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🎶 Música de fondo -->
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML.
+    </audio>
+
+    <!-- 🗓️ Contador de días -->
+    <p id="contador"></p>
+
+    <!-- 🌟 Título y mensaje -->
+    <h1>Día de las Cartitas</h1>
+    <p>Tú nunca serás espectadora.</p>
+
+    <!-- 📩 Botón y carta -->
+    <button onclick="mostrarCarta()">Ver carta</button>
+
+    <div id="carta">
+        <p>
+            Llevamos exactamente un mes con 25 días desde que coincidimos, y desde ese momento, no hay un solo día en el que no le agradezca a Dios por ponerte en mi camino.  
+            Tal vez no llegaste en el momento perfecto, pero sí en el instante en que más necesitaba a alguien como tú.  
+            No me arrepiento de nada. Cada madrugada compartida, cada desvelo, cada conversación, cada risa y hasta cada escena de celos... todo ha valido la pena, porque fue contigo.  
+        </p>
+        <p>
+            A veces la vida nos pone pruebas y caminos complicados, pero tú has sido esa luz dulce y constante que me da paz, alegría y ganas de seguir.  
+            Gracias por tu paciencia, por tu ternura, por ser tú.  
+            Te quiero muchísimo, mi chinita bonita, más de lo que las palabras podrían explicar.
+        </p>
+        <p>
+            Espero, con el corazón, que esta historia no termine aquí.  
+            Que volvamos a coincidir tantas veces como sea necesario, porque mi lugar favorito últimamente siempre es contigo.  
+            Nunca olvides lo especial que eres para mí. 💖
+        </p>
+    </div>
+
+    <!-- 🧠 Scripts -->
+    <script>
+        function mostrarCarta() {
+            document.getElementById("carta").style.display = "block";
+        }
+
+        // Contador de días desde el 24 de marzo de 2025
+        const fechaInicio = new Date(2025, 2, 24); // marzo = 2 (porque enero = 0)
+        function actualizarContador() {
+            const hoy = new Date();
+            const diferencia = hoy - fechaInicio;
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            document.getElementById("contador").innerText = `Han pasado ${dias} días desde que nos conocimos 💖`;
+        }
+        actualizarContador();
+    </script>
+</body>
+</html>
